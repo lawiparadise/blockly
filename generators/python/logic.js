@@ -104,6 +104,14 @@ Blockly.Python['logic_negate'] = function(block) {
   return [code, Blockly.Python.ORDER_LOGICAL_NOT];
 };
 
+
+Blockly.Python['weather'] = function(block) {
+  var code = (block.getFieldValue('weather') == 'temp') ? 'temp' : 'humi';
+
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+
 Blockly.Python['logic_boolean'] = function(block) {
   // Boolean values true and false.
   var code = (block.getFieldValue('BOOL') == 'TRUE') ? 'True' : 'False';

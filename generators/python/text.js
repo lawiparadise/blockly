@@ -225,6 +225,27 @@ Blockly.Python['text_print'] = function(block) {
   return 'print(' + msg + ')\n';
 };
 
+//
+Blockly.Python['my_print'] = function(block) {
+  // Print statement.
+  var msg = Blockly.Python.valueToCode(block, 'TEXT',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  return 'print(' + msg + ')\n';
+};
+Blockly.Python['my_print2'] = function(block) {
+  // Print statement.
+  var msg = Blockly.Python.valueToCode(block, 'TEXT',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  return 'print(' + msg + ')\n';
+};
+Blockly.Python['motor'] = function(block) {
+  // Print statement.
+  var msg = Blockly.Python.valueToCode(block, 'angle',
+      Blockly.Python.ORDER_NONE) || '';
+  return 'motor(' + msg + ')\n';
+};
+//
+
 Blockly.Python['text_prompt_ext'] = function(block) {
   // Prompt function.
   var functionName = Blockly.Python.provideFunction_(
