@@ -34,6 +34,7 @@ goog.require('Blockly.Blocks');
  */
 Blockly.Blocks.logic.HUE = 210;
 
+//
 
 Blockly.Blocks['weather'] = {
     init: function () {
@@ -42,11 +43,249 @@ Blockly.Blocks['weather'] = {
             .appendField(new Blockly.FieldDropdown([["온도", "temp"], ["습도", "humi"]]), "weather");
         this.setInputsInline(true);
         this.setOutput(true, "Number");
-        this.setColour(230);
+        this.setColour(0);
         this.setTooltip('');
         this.setHelpUrl('');
     }
 };
+
+Blockly.Blocks['SKY'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("하늘 상태");
+        this.setInputsInline(true);
+        this.setOutput(true, "Number");
+        this.setColour(0);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};
+
+Blockly.Blocks['PTY'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("강수 형태");
+        this.setInputsInline(true);
+        this.setOutput(true, "Number");
+        this.setColour(0);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};
+
+Blockly.Blocks['dust'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("미세 먼지");
+        this.setInputsInline(true);
+        this.setOutput(true, "Number");
+        this.setColour(0);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};
+
+Blockly.Blocks['soil_humi_sensor'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("토양 습도");
+        this.setInputsInline(true);
+        this.setOutput(true, "Number");
+        this.setColour(30);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};
+
+Blockly.Blocks['pressure_sensor'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("압력");
+        this.setInputsInline(true);
+        this.setOutput(true, "Number");
+        this.setColour(30);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};
+
+Blockly.Blocks['temp_humi_sensor'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("온습도 센서")
+            .appendField(new Blockly.FieldDropdown([["온도", "temp"], ["습도", "humi"]]), "weather");
+        this.setInputsInline(true);
+        this.setOutput(true, "Number");
+        this.setColour(30);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};
+
+Blockly.Blocks['human_sensor'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("사람 인식");
+    this.setOutput(true, "Boolean");
+    this.setColour(30);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+
+Blockly.Blocks['distance_sensor'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("거리");
+    this.setOutput(true, "Number");
+    this.setColour(30);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+
+Blockly.Blocks['knock_sensor'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("노크 횟수");
+        this.setInputsInline(true);
+        this.setOutput(true, "Number");
+        this.setColour(30);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};
+
+Blockly.Blocks['clap_sensor'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("박수 횟수");
+        this.setInputsInline(true);
+        this.setOutput(true, "Number");
+        this.setColour(30);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};
+
+Blockly.Blocks['btn_sensor'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("버튼 눌림");
+    this.setOutput(true, "Boolean");
+    this.setColour(30);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+
+Blockly.Blocks['btn_cnt_sensor'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("버튼 눌림 횟수");
+        this.setInputsInline(true);
+        this.setOutput(true, "Number");
+        this.setColour(30);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};
+
+Blockly.Blocks['illumination_sensor'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("조도");
+        this.setInputsInline(true);
+        this.setOutput(true, "Number");
+        this.setColour(30);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};
+
+Blockly.Blocks['SW'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("스위치");
+    this.setInputsInline(true);
+    this.setOutput(true, "Boolean");
+    this.setColour(230);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+
+// 미세먼지쪽
+
+Blockly.Blocks['PM10'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("미세먼지(10㎛)");
+    this.setOutput(true, "Number");
+    this.setColour(0);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+
+Blockly.Blocks['PM25'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("초미세먼지(2.5㎛)");
+    this.setOutput(true, "Number");
+    this.setColour(0);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+
+Blockly.Blocks['SO2'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("아황산가스(ppm)");
+    this.setOutput(true, "Number");
+    this.setColour(0);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+
+Blockly.Blocks['CO'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("일산화탄소농도(ppm)");
+    this.setOutput(true, "Number");
+    this.setColour(0);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+
+Blockly.Blocks['O3'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("오존농도(ppm)");
+    this.setOutput(true, "Number");
+    this.setColour(0);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+
+Blockly.Blocks['NO2'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("이산화질소농도(ppm)");
+    this.setOutput(true, "Number");
+    this.setColour(0);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+
+
+
+//
 
 Blockly.Blocks['controls_if'] = {
     /**

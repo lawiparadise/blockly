@@ -639,14 +639,65 @@ Blockly.Blocks['motor'] = {
     this.appendValueInput("angle")
         .setCheck("Number")
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("angle");
+        .appendField("각도");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(60);
     this.setTooltip('');
     this.setHelpUrl('');
   }
 };
+
+Blockly.Blocks['remote'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("리모컨 실행");
+    this.appendDummyInput()
+        .appendField("value")
+        .appendField(new Blockly.FieldDropdown([["켬","on"], ["끔","off"], ["볼륨업","volumeUp"], ["볼륨다운","volumeDown"], ["채널업","channelUp"], ["채널다운","channelDown"]]), "value");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(60);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+
+Blockly.Blocks['led'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("LED 실행");
+    this.appendValueInput("brightness")
+        .setCheck("Number")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("밝기");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(60);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+
+Blockly.Blocks['buzzer'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("buzzer 실행");
+    this.appendDummyInput()
+        .appendField("value")
+        .appendField(new Blockly.FieldDropdown([["정지","stop"], ["도","do"],
+            ["레","re"], ["미","mi"], ["파","fa"],
+            ["솔","sol"], ["라","la"], ["시","ti"]]), "value");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(60);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+
+//
+
 
 Blockly.Blocks['text_print'] = {
     /**

@@ -104,13 +104,66 @@ Blockly.Python['logic_negate'] = function(block) {
   return [code, Blockly.Python.ORDER_LOGICAL_NOT];
 };
 
+//
+
+// Blockly.Python['weather'] = function(block) {
+//   var code = (block.getFieldValue('weather') == 'temp') ? 'temp' : 'humi';
+//
+//   return [code, Blockly.Python.ORDER_NONE];
+// };
 
 Blockly.Python['weather'] = function(block) {
-  var code = (block.getFieldValue('weather') == 'temp') ? 'temp' : 'humi';
-
-  return [code, Blockly.Python.ORDER_NONE];
+  var code = (block.getFieldValue('weather') == 'temp') ? 'temperatureFromSky' : 'humidityFromSky';
+  // console.log(block.getFieldValue('weather'));
+  return [code+'()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+Blockly.Python['SKY'] = function(block) {
+  return ['SKYFromSky()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+Blockly.Python['PTY'] = function(block) {
+  return ['PTYFromSky()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+Blockly.Python['dust'] = function(block) {
+  return ['dustFromSky()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+Blockly.Python['soil_humi_sensor'] = function(block) {
+  return ['soilHumidity()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+Blockly.Python['pressure_sensor'] = function(block) {
+  return ['pressureDetect()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+Blockly.Python['temp_humi_sensor'] = function(block) {
+  var code = (block.getFieldValue('weather') == 'temp') ? 'temperatureFromSensor' : 'humidityFromSensor';
+  return [code+'()', Blockly.Python.ORDER_FUNCTION_CALL];
 };
 
+Blockly.Python['human_sensor'] = function(block) {
+  return ['recognizeHuman()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
+Blockly.Python['distance_sensor'] = function(block) {
+  return ['distance()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
+Blockly.Python['knock_sensor'] = function(block) {
+  return ['knock()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+Blockly.Python['clap_sensor'] = function(block) {
+  return ['clapCount()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+Blockly.Python['btn_sensor'] = function(block) {
+  return ['checkButton()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+Blockly.Python['btn_cnt_sensor'] = function(block) {
+  return ['checkButtonCount()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+Blockly.Python['illumination_sensor'] = function(block) {
+  return ['illuminationSensing()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+Blockly.Python['SW'] = function(block) {
+  return ['SW', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+//
 
 Blockly.Python['logic_boolean'] = function(block) {
   // Boolean values true and false.
@@ -133,4 +186,31 @@ Blockly.Python['logic_ternary'] = function(block) {
       Blockly.Python.ORDER_CONDITIONAL) || 'None';
   var code = value_then + ' if ' + value_if + ' else ' + value_else;
   return [code, Blockly.Python.ORDER_CONDITIONAL];
+};
+
+
+////////////////////////////////////////////
+//미세
+Blockly.Python['PM10'] = function(block) {
+  return ['PM10FromSky()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
+Blockly.Python['PM25'] = function(block) {
+  return ['PM25FromSky()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
+Blockly.Python['SO2'] = function(block) {
+  return ['SO2FromSky()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
+Blockly.Python['CO'] = function(block) {
+  return ['COFromSky()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
+Blockly.Python['O3'] = function(block) {
+  return ['O3FromSky()', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
+Blockly.Python['NO2'] = function(block) {
+  return ['NO2FromSky()', Blockly.Python.ORDER_FUNCTION_CALL];
 };
